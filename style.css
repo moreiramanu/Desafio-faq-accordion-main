@@ -1,118 +1,88 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-*{
-    padding:0;
-    margin:0;
-    box-sizing: border-box;
-}
-:root{
-    --white:hsl(0, 100%, 100%);
-    --lightpink:hsl(275, 100%, 97%);
-    --roxoclaro:hsl(292, 16%, 49%);
-    --roxoescuro:hsl(292, 42%, 14%);
-}
-body{
-  background-repeat: no-repeat;
-  background-color: hsl(275, 100%, 97%);
-  background-size:contain;
-  font-family: "Work Sans";
-  min-height: 100vh;
-  display:flex;
-  padding-bottom: 100px;
-}
-#fundo{
-background-image: url('assets/images/background-pattern-desktop.svg');
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 30%;
-background-image: url("./assets/images/background-pattern-desktop.svg");
-background-size: cover;
-z-index: -1;
-}
-img, svg{
-    max-width: 100%;
-    display:block;
-}
-button{
-    cursor:pointer;
-    background-color: transparent;
-    width: 100%;
-    padding: 1rem 0;
-    font-size: 16px;
-    font-weight: bold;
-    display: flex;
-    text-align: left;
-    align-items: center;
-    justify-content: space-between;
-    border:0;
-    color: var(--roxoescuro);
-}
-button:hover{
-    color:purple
-}
-.accordion{
-  background-color: white;
-  max-width: 550px;
-  margin: 150px auto;
-  padding: 2rem;
-  border-radius: 15px;
-  height: 500px;;
-}
-.faq-titulo h1{
-    font-size: 50px;
-    padding-bottom: 20px;
-    color: var(--roxoescuro);
-    display: flex;
-} 
-.faq-titulo{
-    display: flex;
-    gap:10px;
-}
-.faq-titulo img{
-   margin-bottom: 15px;
-}
-.container-card:not(:last-child){
- border-bottom: 2px solid var(--lightpink);
-}
-.card-resposta{
-    background-color: var(--white);
-    max-height: 0;
-    overflow: hidden;
-    transition:max-height 200ms ease;
-}
-.card-resposta p{
-    color: var(--roxoclaro);
-    padding: 10px 0;
-}
-@media (max-width:780px){
-    body{
-        background-image: url(assets/images/background-pattern-mobile.svg);
-        font-size:8px;
-       padding-top: 50px;
-    }
-    img, svg{ 
-        max-width:80px;
-        display:block;
-        object-fit:none;
-    }
-    .accordion{
-        margin-top:10%;
-        max-width:350px;
-        height:500px;
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+  body {
+        background-color: hsl(275, 100%, 97%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
 
+      #background {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 35%;
+        background-image: url("./assets/images/background-pattern-desktop.svg");
+        background-size: cover;
+        z-index: -2;
+
+      }
+      #box {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: 1rem;
+        background-color: white;
+        border-radius: 10px;
+        margin-top: 15%;
+        font-family: "Work Sans";
+        max-width: 400px;
+      }
+      #box h1 {
+        font-weight: bold;
+        color: hsl(292, 42%, 14%);
+        font-size:45px;
+        margin-bottom: 10px;
+        margin-top: 10px;
     }
-.faq-titulo h1{
-    font-size: 40px;
-}
-.faq-titulo{
-    display:flex;
-    gap: 10px;
-}
-.faq-titulo img{
-    max-width:30px;
-    height: auto;
-    object-fit: contain;
-    margin-bottom: 15px;
-}
-}
+      #box h2 {
+        font-size: 16px;
+        font-weight:bold;
+        color: hsl(292, 42%, 14%);
+        margin-bottom:15px;;
+        margin-top: 20px;
+      }
+      #box div {
+        font-size: 0.75rem;
+        font-weight: 400;
+        color: hsl(292, 16%, 49%);
+      }
+      #box h2 {
+        transition: color 0.3s ease;
+      }
+      #box h2:hover {
+        color: hsl(293, 31%, 62%);
+      }
+      #estrela {
+        width: auto;
+        height: 1.5rem;
+      }
+      .accordion-card {
+        display: flex;
+        cursor: pointer;
+      }
+      .mais {
+        margin-left: auto;
+        height: auto;
+        width: 1.5rem;
+      }
+      .accordion-conteudo{
+        display: none;
+      }
+      .accordion-conteudo p{
+        font-size: 14px;
+        font-weight: 450;
+      }
+      .accordion-card{
+        border-bottom:2px solid  hsl(275, 100%, 97%);
+        padding: 10px, 0px;
+      }
+      .accordion-item:last-child .accordion-card{
+        border-bottom: 0px;
+      }
+
+      @media screen and (min-width: 780px) {
+        #box {
+          margin-top: 15%;
+        }
+    }
+
